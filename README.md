@@ -2,22 +2,31 @@
 
 ####An __AngularJS__ module making it easier to interface with __Electron__.
 
+## Install
+
+Navigate to your project folder and run:
+
+```bash
+bower install develephant/ng-electron
+```
+
 ## Setup
 
-Add the `ng-electron.js` to your main app index html page.
+Add the `ng-electron.js` and `angular-bridge.js` to your main app index html page.  They will be both be in your clients project `lib` folder in __ng-electron__.
 
 ```html
 <!-- index.html -->
-<script type="text/javascript" src="./angular-lib/ng-electron.js">
+<script type="text/javascript" src="./client/lib/ng-electron/ng-electron.js"></script>
+<script type="text/javascript" src="./client/lib/ng-electron/angular-bridge.js"></script>
 ```
 
 Inject the __ngElectron__ module in the main `app.js`
 ```javascript
-// app.js
+// AngularJS -> app.js
 var app = angular.module('app', ['ngElectron']);
 ```
 
-Use the module in controllers, etc. using `electron` namespace.
+Add the module to controllers by using the `electron` namespace.
 
 ```javascript
 // controllers.js
@@ -92,13 +101,13 @@ app.controller('myController', ['electron', function(electron) {
 })
 ```
 
-___Note: Electron needs the __angular-bridge__ package to be installed for communicating with AngularJS.___
+___Note: Electron needs the __angular-bridge.js__ file to be included for communicating with AngularJS.___
 
 ---
 
 ## Calling Electron from AngularJS
 
-One additional, though very useful, feature of __ng-electron__ is the direct access to Electron, and various Node packages, for example to quickly access the Electron `dialog` lib from the __host__ process and open a prompt:
+One additional, though very useful feature of __ng-electron__ is the direct access to Electron, and various Node packages, for example to quickly access the Electron `dialog` lib from the __host__ process and open a prompt:
 
 ```javascript
 mod.controller('myController',['electron', function(electron) {
@@ -182,8 +191,7 @@ _See the section __Communicating with Electron__ above for more information on u
 
 # Angular Bridge for Electron
 
-<<<<<<< HEAD
-This __angular-bridge__ [__Electron__](http://electron.atom.io/) package pairs with the [__ng-electron__](https://bitbucket.org/develephant/ng-electron) package to create simple bi-directional communication between AngularJS and Electron using the built in `ipc` Electron package.
+The included __angular-bridge__ package pairs with __ng-electron__ to create simple bi-directional communication between AngularJS and Electron using the built in `ipc` Electron package.
 
 ## Setup
 
@@ -191,31 +199,14 @@ Get the __angular-bridge.js__ and place it wherever you put other Electron proje
 
 ---
 
-__1. Import the `angular-bridge.js` javascript after all the other scripts in the project html entry point, for example `index.html`.__
-
-```html
-<!-- index.html -->
-<script type="text/javascript" src="./lib/angular-bridge.js"></script>
-=======
-This __angular-bridge__ [__Electron__](http://electron.atom.io/) package pairs with the  __ng-electron__ package to create simple bi-directional communication between AngularJS and Electron using the built in `ipc` Electron package.
-
-## Setup
-
 __Import the `angular-bridge.js` javascript after all the other scripts in the project html entry point, for example `index.html`.__
 
 ```html
 <!-- index.html -->
-<script type="text/javascript" src="client/lib/angular-bridge.js"></script>
->>>>>>> 1505d13ee633e582d84f2aeff09af2ce56730ff9
+<script type="text/javascript" src="./lib/angular-bridge.js"></script>
 ```
 
----
-
-<<<<<<< HEAD
-__2. Add the following to the main project javascript entry point, for example `index.js`.__
-=======
 __Add the following to the main javascript entry point for the project, for example `index.js`.__
->>>>>>> 1505d13ee633e582d84f2aeff09af2ce56730ff9
 
 Update or add the following:
 

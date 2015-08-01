@@ -1,5 +1,10 @@
+// #ngElectron
+// It's a good thing to launch this code stoned.
 var mod = angular.module('ngElectron', [])
 
+// __electron__ factory.  This will
+// create a new electron object for
+// the app.
 mod.factory("electron", ['$rootScope',
 function($rootScope) {
   var o             = new Object();
