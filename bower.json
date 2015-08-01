@@ -1,9 +1,6 @@
 {
   "name": "ng-electron",
-  "version": "0.1.3",
-  "main": [
-    "ng-electron.js"
-  ],
+  "version": "0.1.4",
   "authors": [
     "Chris Byerley <cbyerley@develephant.com>"
   ],
@@ -17,7 +14,7 @@
   "homepage": "https://github.com/develephant/ng-electron",
   "repository": {
     "type": "git",
-    "url": "https://github.com/develephant/ng-electron"
+    "url": "git+https://github.com/develephant/ng-electron.git"
   },
   "ignore": [
     "**/.*",
@@ -29,6 +26,6 @@
     ".gitignore",
     "bower.json",
     "gruntfile.js",
-    "package.json",
+    "package.json"
   ]
 }
