@@ -1,8 +1,8 @@
 {
   "name": "ng-electron",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": [
-    "dist/ng-electron.js"
+    "ng-electron.js"
   ],
   "authors": [
     "Chris Byerley <cbyerley@develephant.com>"
@@ -30,6 +30,5 @@
     "bower.json",
     "gruntfile.js",
     "package.json",
-    "README.md"
   ]
 }
