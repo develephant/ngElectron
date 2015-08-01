@@ -1,6 +1,9 @@
 {
   "name": "ng-electron",
-  "version": "0.1.4",
+  "version": "0.1.5",
+  "main": [
+    "ng-electron.js"
+  ],
   "authors": [
     "Chris Byerley <cbyerley@develephant.com>"
   ],
