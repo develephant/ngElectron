@@ -1,0 +1,32 @@
+{
+  "name": "ng-electron",
+  "version": "0.1.4",
+  "authors": [
+    "Chris Byerley <cbyerley@develephant.com>"
+  ],
+  "description": "Enables AngularJS and Electron to integrate together easier.",
+  "keywords": [
+    "AngularJS",
+    "Electron",
+    "ipc"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/develephant/ng-electron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/develephant/ng-electron"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".bowerrc",
+    ".gitignore",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ]
+}
