@@ -226,7 +226,7 @@ var app = angular.module('myApp', ['angElectron']);
 //A controller
 app.controller('myController', ['electron',
 function(electron) {
-  electron.host.send("Hello Host! From Client.");
+  electron.send("Hello Host! From Client.");
 }])
 ```
 
