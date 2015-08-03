@@ -1,13 +1,12 @@
 'use strict';
-var mod = angular.module('ngElectron', [])
-
 const electron_host = 'ELECTRON_BRIDGE_HOST';
 const electron_client = 'ELECTRON_BRIDGE_CLIENT';
 const electron_host_id = 'electron-host';
-
 const ipc = require('ipc');
 
-mod.factory("electron", ['$rootScope',
+angular.module('angElectron', [])
+
+.factory("electron", ['$rootScope',
 function($rootScope) {
   var o             = new Object();
 
@@ -30,7 +29,6 @@ function($rootScope) {
 
   //ipc -> host (main process)
   o.send            = function( data ) {
-    console.log('send '+data);
     ipc.send(electron_host, data);
   };
 
@@ -51,11 +49,11 @@ function($rootScope) {
   o.zlib            = o.require('zlib');
 
   return o;
-}]);
+}])
 
-mod.run(['$rootScope',
+.run(['$rootScope',
 function($rootScope) {
-  console.log('run');
+  console.log('angElectron is running...');
 
   ipc.on(electron_client, function( data ) {
     $rootScope.$emit(electron_host_id, data);

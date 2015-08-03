@@ -1,6 +1,8 @@
 # AngularJS Electron
 
-####An __AngularJS__ module making it easier to interface with __Electron__.
+#####An __AngularJS__ module making it easier to interface with __Electron__.
+
+####Using [__Amy__ App Stack](http://github.com/develephant/amy)? You can skip the "Install" and "Setup" sections.
 
 ## Install
 
@@ -58,11 +60,11 @@ app.controller('myController', ['electron', function(electron) {
 
 ## Communicating with Electron
 
-Using the __ng-bridge__ in Electron, AngularJS can send and listen for messages from the main __host__ process.
+Using the __ang-bridge__ in Electron, AngularJS can send and listen for messages from the main __host__ process.
 
 > The main proccess/Chrome is generally referred to as the __"host"__ in the __ang-electron__ documentation.
 
-When __ang-electron__ runs AngularJS will start listening for messages from the __host__ and broadcast them throughout the AngularJS eco-system.  AngularJS code can listen in for __host__ messages through the __$rootScope__ emitters and  __"electron-host"__ event type.
+When __ang-electron__ starts, AngularJS will listen for incoming messages from the __host__ and broadcast them throughout the AngularJS eco-system.  AngularJS code can listen for __host__ messages through the __$rootScope__ emitters and  __"electron-host"__ event type.
 
 
 ```javascript
@@ -200,3 +202,49 @@ function($scope, electron) {
   });  
 }]);
 ```
+## Integrate ang-electron into an existing project
+
+> If you have an existing AngularJS Electron based project, you can integrate ang-electron pretty easily.  After following the steps below, make sure to read up on the `ang-electron` module in the documentation above.
+
+With the terminal, navigate to your __AngularJS__ 'client' files and run:
+
+`bower install develephant/ang-electron --save`
+
+Now link the js files to the `index.html` of your __Electron__ project:
+
+```html
+<!-- Add the ng-electron module for AngularJS -->
+<script type="text/javascript" src="client/lib/ang-electron/ang-electron.js"></script>
+```
+
+Inject the `angElectron` module dependency into your __AngularJS__ project:
+
+```javascript
+//Main app initialization
+var app = angular.module('myApp', ['angElectron']);
+
+//A controller
+app.controller('myController', ['electron',
+function(electron) {
+  electron.host.send("Hello Host! From Client.");
+}])
+```
+
+Make sure to use DI for `angElectron` in any __AngularJS__ modules you create that need access to __Electron__:
+
+```javascript
+var mod = angular.module('myModule', ['angElectron']);
+```
+
+
+## Functionality
+
+__Electron__ includes __Node 11.x__ allowing you to use any
+[__Node__ based modules](https://nodejs.org/docs/v0.11.0/api).
+
+And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/v0.30.0)
+
+---
+
+(c)2015 @develephant -
+All rights reserved by the originals owners, maintainers, and creators.

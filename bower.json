@@ -1,6 +1,7 @@
 {
   "name": "ang-electron",
   "version": "0.1.7",
+  "main": "ang-electron.js",
   "authors": [
     "Chris Byerley <cbyerley@develephant.com>"
   ],
