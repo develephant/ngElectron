@@ -1,10 +1,12 @@
-// #ngElectron
-// It's a good thing to launch this code stoned.
+'use strict';
 var mod = angular.module('ngElectron', [])
 
-// __electron__ factory.  This will
-// create a new electron object for
-// the app.
+const electron_host = 'ELECTRON_BRIDGE_HOST';
+const electron_client = 'ELECTRON_BRIDGE_CLIENT';
+const electron_host_id = 'electron-host';
+
+const ipc = require('ipc');
+
 mod.factory("electron", ['$rootScope',
 function($rootScope) {
   var o             = new Object();
@@ -27,14 +29,9 @@ function($rootScope) {
   o.tray            = o.require('tray');
 
   //ipc -> host (main process)
-  o.host             = new Object();
-  o.host.send        = function( data ) {
-    require('ipc').send('ELECTRON_BRIDGE_HOST', data);
-  };
-  o.host.listen      = function( _listener ) {
-    require('ipc').on('ELECTRON_BRIDGE_CLIENT', function( data ) {
-      _listener( data );
-    })
+  o.send            = function( data ) {
+    console.log('send '+data);
+    ipc.send(electron_host, data);
   };
 
   //Node 11 (abridged)
@@ -53,16 +50,18 @@ function($rootScope) {
   o.url             = o.require('url');
   o.zlib            = o.require('zlib');
 
-  // If you don't want ngElectron available
-  // on the $rootScope, comment out the following
-  $rootScope.$electron = o;
-
   return o;
 }]);
 
-mod.run(['$rootScope','electron',
-function($rootScope, electron) {
-  electron.host.listen(function(msg) {
-    $rootScope.$broadcast('electron-host', msg);
-  })
+mod.run(['$rootScope',
+function($rootScope) {
+  console.log('run');
+
+  ipc.on(electron_client, function( data ) {
+    $rootScope.$emit(electron_host_id, data);
+  });
+
+  $rootScope.$on(electron_host_id, function( evt, msg ) {
+    console.log( '--> ' + msg );
+  });
 }]);

@@ -1,5 +1,5 @@
 {
-  "name": "ng-electron",
+  "name": "ang-electron",
   "version": "0.1.4",
   "authors": [
     "Chris Byerley <cbyerley@develephant.com>"
@@ -8,13 +8,14 @@
   "keywords": [
     "AngularJS",
     "Electron",
-    "ipc"
+    "ipc",
+    "integration"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/develephant/ng-electron",
+  "homepage": "https://github.com/develephant/ang-electron",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/develephant/ng-electron.git"
+    "url": "git+https://github.com/develephant/ang-electron.git"
   },
   "ignore": [
     "**/.*",
