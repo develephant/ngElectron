@@ -1,6 +1,6 @@
-# AngularJS Electron
+# angElectron - AngularJS Electron Service
 
-#####An __AngularJS__ module making it easier to interface with __Electron__.
+> An __AngularJS__ service module making it easier to interface with __Electron__.
 
 ####Using [__Amy__ App Stack](http://github.com/develephant/amy)? You can skip the "Install" and "Setup" sections.
 
@@ -86,7 +86,7 @@ app.controller('myController', ['electron', function(electron) {
 })
 ```
 
-__Note: Electron needs the ng-bridge module initiated first, before communicating with AngularJS.  See the next section for setup details.__
+__Important:__ _Electron needs the ng-bridge module initiated first, before communicating with AngularJS.  See the next section for setup details._
 
 ---
 
@@ -135,6 +135,16 @@ mod.controller('myController',['electron', function(electron) {
 
 #### The following direct refs can be used in AngularJS controllers through the `electron` namespace:
 
+__Custom__
+
+- send
+- db
+
+__DiskDB__ is supported if the package is installed:
+
+`npm install diskdb --save`
+
+__Note:__ _If you are using the [Amy App Stack](https://develephant.github.io/amy), diskdb is already installed and configured._
 
 __Electron__
 
