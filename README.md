@@ -2,7 +2,7 @@
 
 > An __AngularJS__ service module making it easier to interface with __Electron__.
 
-####Using [__Amy__ App Stack](http://github.com/develephant/amy)? You can skip the "Install" and "Setup" sections.
+####Using [__Amy__ App Stack](http://develephant.github.io/amy)? You can skip the "Install" and "Setup" sections.
 
 ## Install
 
@@ -253,6 +253,8 @@ __Electron__ includes __Node 11.x__ allowing you to use any
 [__Node__ based modules](https://nodejs.org/docs/v0.11.0/api).
 
 And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/v0.30.0)
+
+[__Amy App Stack__](http://develephant.github.io/amy) - AngularJS + Material UI + Electron
 
 ---
 
