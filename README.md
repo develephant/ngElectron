@@ -2,7 +2,7 @@
 
 > An __AngularJS__ service module making it easier to interface with __Electron__.
 
-####Using [__Amy__ App Stack](http://develephant.github.io/amy)? You can skip the "Install" and "Setup" sections.
+####Using [__Amy__ App Stack](http://develephant.github.io/Amy)? You can skip the "Install" and "Setup" sections.
 
 ## Install
 
@@ -144,7 +144,7 @@ __DiskDB__ is supported if the package is installed:
 
 `npm install diskdb --save`
 
-__Note:__ _If you are using the [Amy App Stack](https://develephant.github.io/amy), diskdb is already installed and configured._
+__Note:__ _If you are using the [Amy App Stack](https://develephant.github.io/Amy), diskdb is already installed and configured._
 
 __Electron__
 
@@ -254,7 +254,7 @@ __Electron__ includes __Node 11.x__ allowing you to use any
 
 And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/v0.30.0)
 
-[__Amy App Stack__](http://develephant.github.io/amy) - AngularJS + Material UI + Electron
+[__Amy App Stack__](http://develephant.github.io/Amy) - AngularJS + Material UI + Electron
 
 ---
 
