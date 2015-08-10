@@ -61,7 +61,7 @@ app.controller('myController', ['electron', function(electron) {
 
 Using the __ng-bridge.js__ in Electron, AngularJS can send and listen for messages from the main __host__ process.
 
-> The main proccess/Chrome is generally referred to as the __"host"__ in the __ngElectron__ documentation.
+> __The main proccess/Chrome is generally referred to as the "host" in the ngElectron documentation.__
 
 When __ngElectron__ starts, AngularJS will listen for incoming messages from the __host__ and broadcast them throughout the AngularJS eco-system.  AngularJS code can listen for __host__ messages through the __$rootScope__ emitters and  __"electron-host"__ event type.
 
@@ -95,7 +95,7 @@ The included __ng-bridge.js__ Electron module pairs with __ngElectron__ to creat
 
 ## Usage
 
-Require the __ng-bridge.js__ where you plan on using it:
+Require the __ng-bridge.js__ module where you plan on using it:
 
 ```javascript
 // Electron : index.js

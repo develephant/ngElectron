@@ -3,7 +3,7 @@
  * (c)2015 C. Byerley @develephant
  * http://develephant.github.io/ngElectron
  * See also: https://develephant.gitgub.io/amy
- * Version 0.3.0
+ * Version 0.3.1
  */
 'use strict';
 
