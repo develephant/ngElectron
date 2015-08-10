@@ -18,7 +18,7 @@ Add the `ng-electron.js` to your main Electron app __index.html__ page.
 
 ```html
 <!-- Electron : index.html -->
-<script type="text/javascript" src="./client/lib/ngElectron/ng-electron.js"></script>
+<script type="text/javascript" src="./client/lib/ng-electron/ng-electron.js"></script>
 ```
 
 Inject the __ngElectron__ module in the main `app.js`
@@ -99,7 +99,7 @@ Require the __ng-bridge.js__ module where you plan on using it:
 
 ```javascript
 // Electron : index.js
-var angular = require('./client/lib/ngElectron/ng-bridge');
+var angular = require('./client/lib/ng-electron/ng-bridge');
 ```
 
 Listen for messages from AngularJS in Electron:
@@ -223,7 +223,7 @@ Now link the js files to the `index.html` of your __Electron__ project:
 
 ```html
 <!-- Add the ng-electron module for AngularJS -->
-<script type="text/javascript" src="client/lib/ngElectron/ng-electron.js"></script>
+<script type="text/javascript" src="client/lib/ng-electron/ng-electron.js"></script>
 ```
 
 Inject the `ngElectron` module dependency into your __AngularJS__ project:
