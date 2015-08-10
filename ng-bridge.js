@@ -1,7 +1,7 @@
 /**
 * A Node module for Electron ipc messaging.
-* Talks with the AngularJS ang-electron module.
-* Info: https://develephant.github.io/ang-electron
+* Talks with the AngularJS ngElectron module.
+* Info: https://develephant.github.io/ngElectron
 * See also: https://develephant.gitgub.io/amy
 **/
 var angularBridge = new Object();

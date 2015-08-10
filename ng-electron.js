@@ -1,8 +1,9 @@
 /**
- * angElectron service for AngularJS
+ * ngElectron service for AngularJS
  * (c)2015 C. Byerley @develephant
- * http://develephant.github.io/ang-electron
+ * http://develephant.github.io/ngElectron
  * See also: https://develephant.gitgub.io/amy
+ * Version 0.3.0
  */
 'use strict';
 
@@ -14,7 +15,7 @@ const db_silo = 'client/data';
 const ipc = require('ipc');
 const diskdb = require('diskdb');
 
-angular.module('angElectron', [])
+angular.module('ngElectron', [])
 
 .factory("electron", [function() {
   var o = new Object();
@@ -26,14 +27,18 @@ angular.module('angElectron', [])
 
   //diskdb
   o.db = function( collection ) {
-    var collection_arr = [];
-    if (typeof collection == 'object') {
-      collection_arr = collection;
-    } else if (typeof collection == 'string') {
-      collection_arr.push( collection );
-    }
+    if diskdb then
+      var collection_arr = [];
+      if (typeof collection == 'object') {
+        collection_arr = collection;
+      } else if (typeof collection == 'string') {
+        collection_arr.push( collection );
+      }
 
-    return diskdb.connect(db_silo, collection_arr);
+      return diskdb.connect(db_silo, collection_arr);
+    end
+
+    return 'diskdb is not installed and/or configured.'
   };
 
   //remote require
@@ -75,7 +80,7 @@ angular.module('angElectron', [])
 // Start listening for AngularJS ipc messages
 .run(['$rootScope',
 function($rootScope) {
-  console.log('angElectron has joined the room.');
+  console.log('ngElectron has joined the room.');
   //Start listening for host messages
   ipc.on(electron_client, function( data ) {
     //Event type: 'electron-host'
