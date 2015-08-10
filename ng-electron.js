@@ -3,7 +3,7 @@
  * (c)2015 C. Byerley @develephant
  * http://develephant.github.io/ngElectron
  * See also: https://develephant.gitgub.io/amy
- * Version 0.3.2
+ * Version 0.3.3
  */
 'use strict';
 
@@ -78,12 +78,21 @@ angular.module('ngElectron', [])
 }])
 
 // Start listening for AngularJS ipc messages
-.run(['$rootScope',
-function($rootScope) {
+.run(['$rootScope','electron',
+function($rootScope, electron) {
   console.log('ngElectron has joined the room.');
   //Start listening for host messages
   ipc.on(electron_client, function( data ) {
     //Event type: 'electron-host'
-    $rootScope.$emit(electron_host_id, data);
+    $rootScope.$broadcast(electron_host_id, data);
   });
+
+  /*
+  Add $electron as a special root property.
+  Though generally not a good practice,
+  it helps protect the electron instance
+  and we are in a more closed enviroment
+  as it is.
+  */
+  $rootScope.$electron = electron;
 }]);
