@@ -3,7 +3,7 @@
  * (c)2015 C. Byerley @develephant
  * http://develephant.github.io/ngElectron
  * See also: https://develephant.gitgub.io/amy
- * Version 0.3.1
+ * Version 0.3.2
  */
 'use strict';
 
@@ -27,7 +27,7 @@ angular.module('ngElectron', [])
 
   //diskdb
   o.db = function( collection ) {
-    if diskdb then
+    if ( diskdb ) {
       var collection_arr = [];
       if (typeof collection == 'object') {
         collection_arr = collection;
@@ -36,7 +36,7 @@ angular.module('ngElectron', [])
       }
 
       return diskdb.connect(db_silo, collection_arr);
-    end
+    }
 
     return 'diskdb is not installed and/or configured.'
   };
