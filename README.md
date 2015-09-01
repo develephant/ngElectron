@@ -116,8 +116,15 @@ Send a message to the AngularJS client:
 
 ```javascript
 // Electron : index,js
+
+// Specify a BrowserWindow
+angular.send("Hello from the host.", mainWindow);
+
+// If no BrowserWindow is specified, ng-bridge will attempt to capture the window that is focused in the application.
 angular.send("Hello from the host.");
 ```
+**Note** If a window is neither specified, or found, the message will not send to the client.
+
 ---
 
 ## Calling Electron from AngularJS

@@ -6,12 +6,14 @@
 **/
 var angularBridge = new Object();
 
-angularBridge.send = function ( msg ) {
+angularBridge.send = function ( msg, bw ) {
   var msg = msg;
-  var bw = require('browser-window')
-  .getFocusedWindow()
-  .webContents
-  .send('ELECTRON_BRIDGE_CLIENT', msg);
+  bw = bw || require('browser-window').getFocusedWindow();
+
+  if (bw) {
+    bw.webContents
+      .send('ELECTRON_BRIDGE_CLIENT', msg);
+  }
 }
 angularBridge.listen = function ( _listener ) {
   var _listener = _listener;
