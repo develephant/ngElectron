@@ -14,6 +14,7 @@ const db_silo = 'client/data';
 
 const ipc = require('ipc');
 const diskdb = require('diskdb');
+const shelljs = require('shelljs');
 
 angular.module('ngElectron', [])
 
@@ -73,6 +74,7 @@ angular.module('ngElectron', [])
   o.querystring     = o.require('querystring');
   o.url             = o.require('url');
   o.zlib            = o.require('zlib');
+  o.shelljs         = o.require('shelljs');
 
   return o;
 }])
