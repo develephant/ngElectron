@@ -72,7 +72,7 @@ app.run(['$rootScope', function($rootScope) {
   $rootScope.$on('electron-host', function(evt, data) {
     console.log( data + " from HOST" );
   });
-);
+}]);
 ```
 
 ## Sending a message to the host
@@ -82,7 +82,7 @@ To send a message to the __host__ simply use the `send` method in the `electron`
 ```javascript
 app.controller('myController', ['electron', function(electron) {
   electron.send("Hello from the client.");
-})
+}]);
 ```
 
 __Important:__ _Electron needs the `ng-bridge.js` module initiated first, before communicating with AngularJS.  See the next section for setup details._
@@ -109,7 +109,7 @@ Listen for messages from AngularJS in Electron:
 app.on('ready', function() {
   angular.listen( function( msg ) {
     console.log( msg );
-  })
+  });
 });
 ```
 Send a message to the AngularJS client:
@@ -136,7 +136,7 @@ To quickly access the Electron `dialog` lib from the __host__ process, and open 
 ```javascript
 mod.controller('myController',['electron', function(electron) {
   electron.dialog.showErrorBox('Opps', 'I did it again.');
-}])
+}]);
 ```
 
 #### The following direct refs can be used in AngularJS controllers through the `electron` namespace:
