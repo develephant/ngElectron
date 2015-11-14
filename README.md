@@ -150,6 +150,11 @@ __DiskDB__ is supported if the package is installed:
 
 `npm install diskdb --save`
 
+__ShellJS__ is also supported if the package is installed:
+
+`npm install shelljs --save`
+
+
 __Note:__ _If you are using the [Amy App Stack](https://develephant.github.io/Amy), diskdb is already installed and configured._
 
 __Electron__
