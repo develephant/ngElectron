@@ -12,7 +12,7 @@ const electron_client = 'ELECTRON_BRIDGE_CLIENT';
 const electron_host_id = 'electron-host';
 const db_silo = 'client/data';
 
-const ipc = require('ipc');
+const ipc = require('electron').ipcRenderer;
 const diskdb = require('diskdb');
 const shelljs = require('shelljs');
 
