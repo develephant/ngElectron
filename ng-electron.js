@@ -84,7 +84,7 @@ angular.module('ngElectron', [])
 function($rootScope, electron) {
   console.log('ngElectron has joined the room.');
   //Start listening for host messages
-  ipc.on(electron_client, function( data ) {
+  ipc.on(electron_client, function(event, data) {
     //Event type: 'electron-host'
     $rootScope.$broadcast(electron_host_id, data);
   });
