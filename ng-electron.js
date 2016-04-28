@@ -12,7 +12,7 @@ const electron_client = 'ELECTRON_BRIDGE_CLIENT';
 const electron_host_id = 'electron-host';
 const db_silo = 'client/data';
 
-const ipc = require('ipc');
+const ipc = require('electron').ipcRenderer;
 const diskdb = require('diskdb');
 const shelljs = require('shelljs');
 
@@ -84,7 +84,7 @@ angular.module('ngElectron', [])
 function($rootScope, electron) {
   console.log('ngElectron has joined the room.');
   //Start listening for host messages
-  ipc.on(electron_client, function( data ) {
+  ipc.on(electron_client, function(event, data) {
     //Event type: 'electron-host'
     $rootScope.$broadcast(electron_host_id, data);
   });
