@@ -1,20 +1,16 @@
 /**
  * ngElectron service for AngularJS
- * (c)2015 C. Byerley @develephant
+ * Coryright 2015-16 C. Byerley @develephant
  * http://develephant.github.io/ngElectron
- * See also: https://develephant.gitgub.io/amy
- * Version 0.5.0
+ * Version 0.5.1
  */
 'use strict';
 
 const electron_host = 'ELECTRON_BRIDGE_HOST';
 const electron_client = 'ELECTRON_BRIDGE_CLIENT';
 const electron_host_id = 'electron-host';
-const db_silo = 'client/data';
 
 const ipc = require('electron').ipcRenderer;
-const diskdb = require('diskdb');
-const shelljs = require('shelljs');
 
 angular.module('ngElectron', [])
 
@@ -26,34 +22,18 @@ angular.module('ngElectron', [])
     ipc.send(electron_host, data);
   };
 
-  //diskdb
-  o.db = function( collection ) {
-    if ( diskdb ) {
-      var collection_arr = [];
-      if (typeof collection == 'object') {
-        collection_arr = collection;
-      } else if (typeof collection == 'string') {
-        collection_arr.push( collection );
-      }
-
-      return diskdb.connect(db_silo, collection_arr);
-    }
-
-    return 'diskdb is not installed and/or configured.'
-  };
-
   //remote require
   o.require         = require('remote').require;
 
   //Electron api
   o.app             = o.require('app');
-  o.browserWindow   = o.require('browser-window');
+  o.browserWindow   = o.require('browserWindow');
   o.clipboard       = o.require('clipboard');
   o.dialog          = o.require('dialog');
   o.menu            = o.require('menu');
-  o.menuItem        = o.require('menu-item');
-  o.nativeImage     = o.require('native-image');
-  o.powerMonitor    = o.require('power-monitor');
+  o.menuItem        = o.require('menuItem');
+  o.nativeImage     = o.require('nativeImage');
+  o.powerMonitor    = o.require('powerMonitor');
   o.protocol        = o.require('protocol');
   o.screen          = o.require('screen');
   o.shell           = o.require('shell');
@@ -61,7 +41,7 @@ angular.module('ngElectron', [])
 
   //Node 11 (abridged) api
   o.buffer          = o.require('buffer');
-  o.childProcess    = o.require('child_process');
+  o.childProcess    = o.require('childProcess');
   o.crypto          = o.require('crypto');
   o.dns             = o.require('dns');
   o.emitter         = o.require('events').EventEmitter;
@@ -74,7 +54,6 @@ angular.module('ngElectron', [])
   o.querystring     = o.require('querystring');
   o.url             = o.require('url');
   o.zlib            = o.require('zlib');
-  o.shelljs         = o.require('shelljs');
 
   return o;
 }])
