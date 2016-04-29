@@ -267,10 +267,10 @@ And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/
 
 ## Contributors
 
-__[MarkRabey](https://github.com/MarkRabey)__
-__[dgoradia](https://github.com/dgoradia)__
-__[nicam](https://github.com/nicam)__
-__[ojwebtech](https://github.com/ojwebtech)__
+:construction_worker: __[MarkRabey](https://github.com/MarkRabey)__
+:construction_worker: __[dgoradia](https://github.com/dgoradia)__
+:construction_worker: __[nicam](https://github.com/nicam)__
+:construction_worker: __[ojwebtech](https://github.com/ojwebtech)__
 
 
 ---
