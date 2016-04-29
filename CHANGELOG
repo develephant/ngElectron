@@ -1,0 +1,6 @@
+0.5.1 - 4.29.16
+
+- Fixed: browser-window ref
+- Changed: removed datadb dependency
+- Changed: removed bower dependency
+- Added: Contributors to the readme

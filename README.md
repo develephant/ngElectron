@@ -2,15 +2,11 @@
 
 > An __AngularJS__ service module making it easier to interface with __Electron__.
 
-#### Using [__Amy__ App Stack](http://develephant.github.io/Amy)? You can skip the "Install" and "Setup" sections.
-
 ## Install
 
-Navigate to your _client-side(AngularJS)_ project folder, which may be different for your structure, and run:
+Start by downloading the __ngElectron__ bundle: __[Download Here](https://github.com/develephant/ngElectron/archive/master.zip)__
 
-```bash
-bower install develephant/ng-electron
-```
+Unzip the archive and move the `ng-electron.js` and `ng-bridge.js` to an accessable path.
 
 ## Setup
 
@@ -220,7 +216,7 @@ function($scope, electron) {
   electron.dns.resolve("http://google.com", function(err, addrs) {
     $scope.address = addrs[0];
     $scope.$apply();
-  });  
+  });
 }]);
 ```
 ## Integrate ngElectron into an existing project
@@ -269,5 +265,15 @@ And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/
 
 ---
 
-(c)2015 @develephant -
+## Contributors
+
+__[MarkRabey](https://github.com/MarkRabey)__
+__[dgoradia](https://github.com/dgoradia)__
+__[nicam](https://github.com/nicam)__
+__[ojwebtech](https://github.com/ojwebtech)__
+
+
+---
+
+(c)2015-16 C. Byerley @develephant :elephant:
 All rights reserved by the originals owners, maintainers, and creators.
