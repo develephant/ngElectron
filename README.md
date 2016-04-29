@@ -253,16 +253,6 @@ Make sure to use DI for `ngElectron` in any __AngularJS__ modules you create tha
 var mod = angular.module('myModule', ['ngElectron']);
 ```
 
-
-## Functionality
-
-__Electron__ includes __Node 11.x__ allowing you to use any
-[__Node__ based modules](https://nodejs.org/docs/v0.11.0/api).
-
-And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/v0.30.0)
-
-[__Amy App Stack__](http://develephant.github.io/Amy) - AngularJS + Material UI + Electron
-
 ---
 
 ## Contributors
@@ -271,7 +261,6 @@ And of course the [__Electron API__ Documentation](http://electron.atom.io/docs/
 :construction_worker: __[dgoradia](https://github.com/dgoradia)__
 :construction_worker: __[nicam](https://github.com/nicam)__
 :construction_worker: __[ojwebtech](https://github.com/ojwebtech)__
-
 
 ---
 
