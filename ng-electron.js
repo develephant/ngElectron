@@ -38,6 +38,7 @@ angular.module('ngElectron', [])
   o.screen          = o.require('screen');
   o.shell           = o.require('shell');
   o.tray            = o.require('tray');
+  o.desktopCapturer = require('electron').desktopCapturer;
 
   //Node 11 (abridged) api
   o.buffer          = o.require('buffer');
