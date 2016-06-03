@@ -3,7 +3,7 @@
 
 __Check out the latest release that supersedes `ngElectron`__
 
-#### Learn more about [electangular.js](https://github.com/develephant/electangular)
+#### Learn more about [electangular.js](http://develephant.github.io/electangular/)
 
 ---
 
