@@ -1,4 +1,13 @@
-# ngElectron - AngularJS Electron Service
+
+# New Release: `electangular.js`
+
+__Check out the latest release that supercedes `ngElectron`__
+
+##### [electangular.js](https://github.com/develephant/electangular)
+
+---
+
+### ngElectron - AngularJS Electron Service
 
 > An __AngularJS__ service module making it easier to interface with __Electron__.
 
