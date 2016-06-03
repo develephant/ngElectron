@@ -27,21 +27,22 @@ angular.module('ngElectron', [])
 
   //Electron api
   o.app             = o.require('app');
-  o.browserWindow   = o.require('browserWindow');
+  o.browserWindow   = o.require('browser-window');
   o.clipboard       = o.require('clipboard');
   o.dialog          = o.require('dialog');
   o.menu            = o.require('menu');
-  o.menuItem        = o.require('menuItem');
-  o.nativeImage     = o.require('nativeImage');
-  o.powerMonitor    = o.require('powerMonitor');
+  o.menuItem        = o.require('menu-item');
+  o.nativeImage     = o.require('native-image');
+  o.powerMonitor    = o.require('power-monitor');
   o.protocol        = o.require('protocol');
   o.screen          = o.require('screen');
   o.shell           = o.require('shell');
   o.tray            = o.require('tray');
+  o.capturer        = require('electron').desktopCapturer;
 
   //Node 11 (abridged) api
   o.buffer          = o.require('buffer');
-  o.childProcess    = o.require('childProcess');
+  o.childProcess    = o.require('child_process');
   o.crypto          = o.require('crypto');
   o.dns             = o.require('dns');
   o.emitter         = o.require('events').EventEmitter;
