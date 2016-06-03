@@ -1,9 +1,9 @@
 
-# New Release: `electangular.js`
+## New Release: `electangular.js`
 
-__Check out the latest release that supercedes `ngElectron`__
+__Check out the latest release that supersedes `ngElectron`__
 
-##### [electangular.js](https://github.com/develephant/electangular)
+#### Learn more about [electangular.js](https://github.com/develephant/electangular)
 
 ---
 
