@@ -22,22 +22,22 @@ angular.module('ngElectron', [])
     ipc.send(electron_host, data);
   };
 
-  //remote require
-  o.require         = require('remote').require;
+    //remote require
+  o.require         = require('electron').remote.require;
 
   //Electron api
-  o.app             = o.require('app');
-  o.browserWindow   = o.require('browser-window');
-  o.clipboard       = o.require('clipboard');
-  o.dialog          = o.require('dialog');
-  o.menu            = o.require('menu');
-  o.menuItem        = o.require('menu-item');
-  o.nativeImage     = o.require('native-image');
-  o.powerMonitor    = o.require('power-monitor');
-  o.protocol        = o.require('protocol');
-  o.screen          = o.require('screen');
-  o.shell           = o.require('shell');
-  o.tray            = o.require('tray');
+  o.app             = require('electron').remote.app;
+  o.browserWindow   = require('electron').remote.BrowserWindow;
+  o.clipboard       = require('electron').remote.clipboard;
+  o.dialog          = require('electron').remote.dialog;
+  o.menu            = require('electron').remote.Menu;
+  o.menuItem        = require('electron').remote.MenuItem;
+  o.nativeImage     = require('electron').remote.NativeImage;
+  o.powerMonitor    = require('electron').remote.PowerMonitor;
+  o.protocol        = require('electron').remote.Protocol;
+  o.screen          = require('electron').remote.Screen;
+  o.shell           = require('electron').remote.Shell;
+  o.tray            = require('electron').remote.Tray;
   o.capturer        = require('electron').desktopCapturer;
 
   //Node 11 (abridged) api
