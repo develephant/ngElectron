@@ -10,7 +10,7 @@ var angularBridge = new Object();
 
 angularBridge.send = function ( msg, bw ) {
   var msg = msg;
-  bw = bw || require('electron').browserWindow.getFocusedWindow();
+  bw = bw || require('electron').BrowserWindow.getFocusedWindow();
 
   if (bw) {
     bw.webContents
